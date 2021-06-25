@@ -8,6 +8,7 @@ import IronOxideWithHNO3 from './components/ExerciseFormat/IronOxideWithHNO3';
 import Al3WithOH from './components/ExerciseFormat/Al3WithOH';
 import AlO2WithH from './components/ExerciseFormat/AlO2WithH';
 import HWithHCO3AndCO3 from './components/ExerciseFormat/HWithHCO3AndCO3';
+import './App.css';
 
 export default function App() {
   return (
