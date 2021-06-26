@@ -3,15 +3,14 @@ import { Row, Col, Image } from 'react-bootstrap';
 
 export default function Home() {
 	return (
-		<Row style={{ marginTop: '1%' }}>
+		<Row style={{ marginTop: '2%' }}>
 			<Col sm={6}>
 				<Image
 					src="https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-9/87551951_534646137176656_6420289943544791040_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=41--ENfWAnsAX_tI96I&tn=LmsjCjdx2PD-F9Wv&_nc_ht=scontent-hkg4-2.xx&oh=4682262aa9cc43cdbba2e6d687be5d73&oe=60DAEBC6"
 					width="80%"
 					height="auto"
-					className="d-inline-block align-center"
+					className="d-inline-block avatar-PLC"
 					alt="AvatarLogo"
-					style={{ marginLeft: '5%', borderRadius: '50%' }}
 				/>
 			</Col>
 
