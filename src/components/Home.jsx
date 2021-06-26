@@ -16,13 +16,13 @@ export default function Home() {
 			</Col>
 
 			<Col sm={6}>
-				<section class="resume-section" id="about">
-					<div class="resume-section-content">
-						<h1 class="mb-0">
+				<section className="resume-section" id="about">
+					<div className="resume-section-content">
+						<h1 className="mb-0">
 							Phuoc
-							<span class="text-success"> Leo Ceo</span>
+							<span className="text-success"> Leo Ceo</span>
 						</h1>
-						<div class="subheading">
+						<div className="subheading">
 							Da Nang · (+84) 382-609-982 ·
 							<a href="mailto:ht10082001@gmail.com">ht10082001@gmail.com</a>
 						</div>
