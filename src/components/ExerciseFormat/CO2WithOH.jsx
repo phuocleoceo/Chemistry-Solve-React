@@ -124,9 +124,9 @@ export default function CO2WithOH() {
 					<Form>
 						<Form.Label className="font-weight-bold text-success">Sau phản ứng :</Form.Label>
 
-						<Form.Group controlId="SaltMass" style={{ marginTop: '7%' }}>
+						<Form.Group controlId="Comment" style={{ marginTop: '7%' }}>
 							<Form.Label>Kết quả phản ứng</Form.Label>
-							<Form.Control value={result.comment} type="text" name="comment" required readOnly
+							<Form.Control value={result.comment} type="text" plaintext required readOnly
 								placeholder="Nhận xét kết quả..." />
 						</Form.Group>
 
