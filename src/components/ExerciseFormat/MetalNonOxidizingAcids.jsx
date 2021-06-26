@@ -39,7 +39,6 @@ export default function MetalNonOxidizingAcids() {
 							</Form.Control>
 						</Form.Group>
 
-
 						<Form.Group controlId="H2Volume">
 							<Form.Label>Thể tích H2 (lít)</Form.Label>
 							<Form.Control type="text" name="H2Volume" required

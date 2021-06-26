@@ -70,7 +70,7 @@ export default function CO2WithOH() {
 	}
 
 	return (
-		<Container style={{ marginTop: '0.3%', marginLeft: '2%' }}>
+		<Container style={{ marginTop: '0.3%' }}>
 			<Row>
 				<Col sm={6}>
 					<Form onSubmit={handleSubmit}>
