@@ -33,9 +33,7 @@ export default function MetalNonOxidizingAcids() {
 
 						<Form.Group controlId="Axit">
 							<Form.Label>Loại Axit</Form.Label>
-							<Form.Control
-								name="Axit"
-								as="select">
+							<Form.Control name="Axit" as="select">
 								<option value="HCl">HCl</option>
 								<option value="H2SO4">H2SO4 loãng</option>
 							</Form.Control>
@@ -49,7 +47,7 @@ export default function MetalNonOxidizingAcids() {
 						</Form.Group>
 
 						<Form.Group>
-							<Button variant="primary" type="submit">
+							<Button variant="primary" type="submit" block>
 								Tính toán
 							</Button>
 						</Form.Group>
@@ -66,8 +64,7 @@ export default function MetalNonOxidizingAcids() {
 			<hr />
 			<Row>
 				<Col sm={6}>
-					<Form onSubmit={handleSubmit}>
-
+					<Form>
 						<Form.Label className="font-weight-bold text-success">Sau phản ứng :</Form.Label>
 						<Form.Group controlId="SaltMass">
 							<Form.Label>Khối lượng muối (gam)</Form.Label>

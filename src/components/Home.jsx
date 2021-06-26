@@ -18,14 +18,14 @@ export default function Home() {
 				<section className="resume-section" id="about">
 					<div className="resume-section-content">
 						<h1 className="mb-0">
-							Phuoc
-							<span className="text-success"> Leo Ceo</span>
+							PHUOC
+							<span className="text-success"> LEO CEO</span>
 						</h1>
 						<div className="subheading">
-							Da Nang · (+84) 382-609-982 ·
+							DUT · (+84) 382-609-982 ·
 							<a href="mailto:ht10082001@gmail.com">ht10082001@gmail.com</a>
 						</div>
-						<h3>Personal Infomation</h3>
+						<h3>PERSONAL INFORMATION</h3>
 						<p>Birthday: 10/08/2001</p>
 						<p>Home town: Hai Truong, Hai Lang, Quang Tri</p>
 						<p>Address: 08 Ha Van Tinh, Hoa Khanh Nam, Lien Chieu, Da Nang</p>
