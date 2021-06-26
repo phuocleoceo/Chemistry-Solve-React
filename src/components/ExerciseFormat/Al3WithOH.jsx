@@ -88,11 +88,9 @@ export default function Al3WithOH() {
 					</Form>
 				</Col>
 
-				<Col sm={6}>
-					<a href="#/" target="_blank" rel="noreferrer">
-						<Image width="80%" height="auto"
-							src="" />
-					</a>
+				<Col sm={{ span: 5, offset: 1 }}>
+					<Image src="https://thietbiruaxegiare.net/wp-content/uploads/2020/11/aloh3-ket-tua-mau-gi-1.jpg"
+						width="100%" height="auto" />
 				</Col>
 			</Row >
 			<hr />
@@ -132,8 +130,7 @@ export default function Al3WithOH() {
 				</Col>
 
 				<Col sm={6}>
-					<Image width="80%" height="auto"
-						src="" />
+
 				</Col>
 			</Row >
 		</Container >

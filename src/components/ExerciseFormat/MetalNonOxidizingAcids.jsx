@@ -53,11 +53,9 @@ export default function MetalNonOxidizingAcids() {
 					</Form>
 				</Col>
 
-				<Col sm={6}>
-					<a href="https://www.youtube.com/watch?v=vsk8WmRCKOI" target="_blank" rel="noreferrer">
-						<Image width="80%" height="auto"
-							src="https://i.ytimg.com/vi/vsk8WmRCKOI/maxresdefault.jpg" />
-					</a>
+				<Col sm={{ span: 5, offset: 1 }} style={{ marginTop: '5%' }}>
+					<Image width="120%" height="auto"
+						src="https://cdn.vungoi.vn/picture/2018/0405/2.PNG" />
 				</Col>
 			</Row >
 			<hr />
@@ -73,8 +71,7 @@ export default function MetalNonOxidizingAcids() {
 				</Col>
 
 				<Col sm={6}>
-					<Image width="80%" height="auto"
-						src="https://cdn.vungoi.vn/picture/2018/0405/2.PNG" />
+
 				</Col>
 			</Row >
 		</Container >

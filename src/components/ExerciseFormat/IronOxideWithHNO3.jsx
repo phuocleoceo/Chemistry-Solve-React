@@ -80,11 +80,8 @@ export default function IronOxideWithHNO3() {
 				</Col>
 
 				<Col sm={{ span: 5, offset: 1 }}>
-					<a href="https://hayhochoi.vn/phuong-phap-giai-cac-dang-bai-tap-ve-sat-fe-hon-hop-va-hop-chat-cua-sat-hoa-lop-12.html"
-						target="_blank" rel="noreferrer">
-						<Image width="105%" height="auto"
-							src="https://hayhochoi.vn/thumbs_size/news/2019_03/[630x420-cr]cac-dang-bai-tap-ve-sat-fe-hon-hop-sat-va-hop-chat.jpg" />
-					</a>
+					<Image src="https://hayhochoi.vn/thumbs_size/news/2019_03/[630x420-cr]cac-dang-bai-tap-ve-sat-fe-hon-hop-sat-va-hop-chat.jpg"
+						width="95%" height="auto" />
 				</Col>
 			</Row >
 			<hr />
