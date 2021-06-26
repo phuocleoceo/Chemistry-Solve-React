@@ -13,7 +13,7 @@ import './App.css';
 export default function App() {
   return (
     <BrowserRouter>
-      <Container className="no-padding" style={{ maxWidth: '100%' }}>
+      <Container className="full-width-bar">
         <Navigation />
 
         <Switch>
