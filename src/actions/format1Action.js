@@ -4,3 +4,9 @@ export const calculateSalt = (input) => {
         payload: input
     };
 };
+
+export const resetState = () => {
+    return {
+        type: 'RESET_STATE'
+    };
+};

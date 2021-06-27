@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Row, Col, Form, Image, Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { calculateSalt } from '../../actions/format1Action';
+import { calculateSalt, resetState } from '../../actions/format1Action';
 
 export default function MetalNonOxidizingAcids() {
 	const salt = useSelector(state => state.format1);
 	const dispatch = useDispatch();
+	useEffect(() => dispatch(resetState()), []);
 
 	function handleSubmit(e) {
 		e.preventDefault();

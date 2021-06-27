@@ -6,6 +6,8 @@ const format1Reducer = (state = initialState, action) => {
             const { metalMass, axitMass, h2Mol } = action.payload;
             return (metalMass + axitMass - h2Mol * 2);
         }
+        case 'RESET_STATE':
+            return initialState;
         default:
             return state;
     }
