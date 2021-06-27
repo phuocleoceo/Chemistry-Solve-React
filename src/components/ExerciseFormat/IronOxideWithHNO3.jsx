@@ -30,7 +30,7 @@ export default function IronOxideWithHNO3() {
 			<Row>
 				<Col sm={6}>
 					<Form onSubmit={handleSubmit}>
-						<Form.Label className="font-weight-bold text-success">Trước phản ứng :</Form.Label>
+						<Form.Label className="font-weight-bold text-success">Dữ kiện :</Form.Label>
 
 						<Form.Group controlId="OxideMass">
 							<Form.Label>Khối lượng hỗn hợp oxit sắt (gam)</Form.Label>
@@ -88,7 +88,7 @@ export default function IronOxideWithHNO3() {
 			<Row>
 				<Col sm={6}>
 					<Form>
-						<Form.Label className="font-weight-bold text-success">Sau phản ứng :</Form.Label>
+						<Form.Label className="font-weight-bold text-success">Kết quả :</Form.Label>
 
 						<Form.Group controlId="FeMass">
 							<Form.Label>Khối lượng sắt (gam)</Form.Label>

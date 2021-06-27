@@ -54,7 +54,7 @@ export default function HWithHCO3AndCO3() {
 				HCO3MinusRemnant = 0;
 				CO3_2MinusRemnant = 0;
 			}
-			if (H_Plus > (HCO3_Minus + CO3_2Minus)) {
+			if (H_Plus > HCO3_Minus) {
 				commentValue = "H+(dư) p/ứ hết CO3(2-) và HCO3-, CO2 cực đại";
 				CO2Value = HCO3_Minus;
 				HPlusRemnant = H_Plus - HCO3_Minus;
