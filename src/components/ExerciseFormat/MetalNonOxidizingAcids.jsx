@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Row, Col, Form, Image, Container } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { calculateSalt } from '../../actions/format1Action';
 
 export default function MetalNonOxidizingAcids() {
-	const [salt, setSalt] = useState(0);
+	const salt = useSelector(state => state.format1);
+	const dispatch = useDispatch();
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		const metalMass = parseFloat(e.target.MetalMass.value);
-		const h2Mol = parseFloat(e.target.H2Volume.value) / 22.4;
+		const h2_Mol = parseFloat(e.target.H2Volume.value) / 22.4;
 		const axitType = e.target.Axit.value;
-		let axitMass = 0;
-		if (axitType === "HCl") axitMass = h2Mol * 2 * 36.5;
-		if (axitType === "H2SO4") axitMass = h2Mol * 98;
-		const saltMass = (metalMass + axitMass - h2Mol * 2);
-		setSalt(saltMass);
+		const input = {
+			metalMass: parseFloat(e.target.MetalMass.value),
+			h2Mol: h2_Mol,
+			axitMass: (axitType === "HCl") ? (h2_Mol * 2 * 36.5) : (h2_Mol * 98)
+		};
+		const action = calculateSalt(input);
+		dispatch(action);
 	}
 	return (
 		<Container style={{ marginTop: '1%' }}>
