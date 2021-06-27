@@ -92,12 +92,12 @@ export default function IronOxideWithHNO3() {
 
 						<Form.Group controlId="FeMass">
 							<Form.Label>Khối lượng sắt (gam)</Form.Label>
-							<Form.Control value={result.Fe_Mass} type="text" name="FeMass" plaintext required readOnly />
+							<Form.Control value={result.Fe_Mass} type="text" plaintext required readOnly />
 						</Form.Group>
 
-						<Form.Group controlId="SaltMass">
+						<Form.Group controlId="HNO3">
 							<Form.Label>HNO3 (mol)</Form.Label>
-							<Form.Control value={result.mol_HNO3} type="text" name="MolHNO3" plaintext required readOnly />
+							<Form.Control value={result.mol_HNO3} type="text" plaintext required readOnly />
 						</Form.Group>
 					</Form>
 				</Col>

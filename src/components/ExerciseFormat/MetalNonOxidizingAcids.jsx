@@ -54,7 +54,7 @@ export default function MetalNonOxidizingAcids() {
 				</Col>
 
 				<Col sm={{ span: 5, offset: 1 }} style={{ marginTop: '5%' }}>
-					<Image width="120%" height="auto"
+					<Image width="100%" height="auto"
 						src="https://cdn.vungoi.vn/picture/2018/0405/2.PNG" />
 				</Col>
 			</Row >
