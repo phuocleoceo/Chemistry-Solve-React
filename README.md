@@ -7,6 +7,8 @@ bootstrap
 
 react-bootstrap
 
+redux react-redux
+
 ### Installation
 
 1. Copy the address of the project
