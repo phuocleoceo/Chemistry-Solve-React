@@ -13,47 +13,47 @@ export default function HWithHCO3AndCO3() {
 	return (
 		<Container style={{ marginTop: '1%' }}>
 			<Row>
+				<Col sm={11}>
+					<Form onSubmit={handleSubmit}>
+						<Form.Label className="font-weight-bold text-success">Trước phản ứng :</Form.Label>
 
-				<Form onSubmit={handleSubmit}>
-					<Form.Label className="font-weight-bold text-success">Trước phản ứng :</Form.Label>
+						<Form.Row>
+							<Form.Group as={Col} controlId="HCO3Minus">
+								<Form.Label>HCO3- (mol)</Form.Label>
+								<Form.Control type="text" name="HCO3Minus" required
+									placeholder="Nhập số mol HCO3-..." />
+							</Form.Group>
 
-					<Form.Row>
-						<Form.Group as={Col} controlId="HCO3Minus">
-							<Form.Label>HCO3- (mol)</Form.Label>
-							<Form.Control type="text" name="HCO3Minus" required
-								placeholder="Nhập số mol HCO3-..." />
+							<Form.Group as={Col} controlId="CO32Minus">
+								<Form.Label>(CO3)2- (mol)</Form.Label>
+								<Form.Control type="text" name="CO32Minus" required
+									placeholder="Nhập số mol (CO3)2-..." />
+							</Form.Group>
+						</Form.Row>
+
+						<Form.Row>
+							<Form.Group as={Col} controlId="HPlus">
+								<Form.Label>H+ (mol)</Form.Label>
+								<Form.Control type="text" name="HPlus" required
+									placeholder="Nhập số mol H+..." />
+							</Form.Group>
+
+							<Form.Group as={Col} controlId="Axit">
+								<Form.Label>Chọn trường hợp</Form.Label>
+								<Form.Control name="Axit" as="select">
+									<option value="1">Đổ H+ vào HCO3- và (CO3)2-</option>
+									<option value="2">Đổ HCO3- và (CO3)2- vào H+</option>
+								</Form.Control>
+							</Form.Group>
+						</Form.Row>
+
+						<Form.Group>
+							<Button variant="primary" type="submit" block>
+								Tính toán
+							</Button>
 						</Form.Group>
-
-						<Form.Group as={Col} controlId="CO32Minus">
-							<Form.Label>(CO3)2- (mol)</Form.Label>
-							<Form.Control type="text" name="CO32Minus" required
-								placeholder="Nhập số mol (CO3)2-..." />
-						</Form.Group>
-					</Form.Row>
-
-					<Form.Row>
-						<Form.Group as={Col} controlId="HPlus">
-							<Form.Label>H+ (mol)</Form.Label>
-							<Form.Control type="text" name="HPlus" required
-								placeholder="Nhập số mol H+..." />
-						</Form.Group>
-
-						<Form.Group as={Col} controlId="Axit">
-							<Form.Label>Chọn trường hợp</Form.Label>
-							<Form.Control name="Axit" as="select">
-								<option value="1">Đổ H+ vào HCO3- và (CO3)2-</option>
-								<option value="2">Đổ HCO3- và (CO3)2- vào H+</option>
-							</Form.Control>
-						</Form.Group>
-					</Form.Row>
-
-					<Form.Group>
-						<Button variant="primary" type="submit" block>
-							Tính toán
-						</Button>
-					</Form.Group>
-				</Form>
-
+					</Form>
+				</Col>
 			</Row >
 			<hr />
 			<Row>
