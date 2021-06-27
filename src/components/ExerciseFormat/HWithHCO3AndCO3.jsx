@@ -70,7 +70,29 @@ export default function HWithHCO3AndCO3() {
 		// a + 2b = nH+; =>  b*nHCO3-/nCO3(2-) + 2b = nH+
 		// giải tìm b và a => nCO2 = a + b
 		else if (Case === 2) {
-
+			if (H_Plus < (HCO3_Minus + 2 * CO3_2Minus)) {
+				commentValue = "H+ p/ứ với cả CO3(2-) và HCO3-, CO2 thoát ra";
+				const CO3_React = H_Plus / (HCO3_Minus / CO3_2Minus + 2);
+				const HCO3_React = CO3_React * HCO3_Minus / CO3_2Minus;
+				CO2Value = HCO3_React + CO3_React;
+				HPlusRemnant = 0;
+				HCO3MinusRemnant = HCO3_Minus - HCO3_React;
+				CO3_2MinusRemnant = CO3_2Minus - CO3_React;
+			}
+			if (H_Plus === (HCO3_Minus + 2 * CO3_2Minus)) {
+				commentValue = "H+(hết) p/ứ hết CO3(2-) và HCO3-, CO2 cực đại";
+				CO2Value = HCO3_Minus + CO3_2Minus;
+				HPlusRemnant = 0;
+				HCO3MinusRemnant = 0;
+				CO3_2MinusRemnant = 0;
+			}
+			if (H_Plus > (HCO3_Minus + 2 * CO3_2Minus)) {
+				commentValue = "H+(dư) p/ứ hết CO3(2-) và HCO3-, CO2 cực đại";
+				CO2Value = HCO3_Minus + CO3_2Minus;
+				HPlusRemnant = H_Plus - (HCO3_Minus + 2 * CO3_2Minus);
+				HCO3MinusRemnant = 0;
+				CO3_2MinusRemnant = 0;
+			}
 		}
 		setResult({
 			comment: commentValue,
