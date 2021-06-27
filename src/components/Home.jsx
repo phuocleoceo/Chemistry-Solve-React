@@ -32,6 +32,16 @@ export default function Home() {
 						<p>Trường Đại học : Trường Đại học Bách Khoa - Đại học Đà Nẵng</p>
 						<p>Số điện thoại : (+84) 382-609-982</p>
 						<p>Email : ht10082001@gmail.com</p>
+						<div className="social-icons">
+							<a className="social-icon" href="https://www.facebook.com/phuocleoceo/" target="blank">
+								<i className="fab fa-facebook-f" /></a>
+							<a className="social-icon" href="https://github.com/phuocleoceo" target="blank">
+								<i className="fab fa-github" /></a>
+							<a className="social-icon" href="https://phuocleoceo.github.io/" target="blank">
+								<i className="fas fa-user-circle" /></a>
+							<a className="social-icon" href="https://twitter.com/ht10082001" target="blank">
+								<i className="fab fa-twitter" /></a>
+						</div>
 					</div>
 				</section>
 			</Col>
