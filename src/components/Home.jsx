@@ -25,13 +25,13 @@ export default function Home() {
 							DUT · (+84) 382-609-982 ·
 							<a href="mailto:ht10082001@gmail.com">ht10082001@gmail.com</a>
 						</div>
-						<h3>PERSONAL INFORMATION</h3>
-						<p>Birthday: 10/08/2001</p>
-						<p>Home town: Hai Truong, Hai Lang, Quang Tri</p>
-						<p>Address: 08 Ha Van Tinh, Hoa Khanh Nam, Lien Chieu, Da Nang</p>
-						<p>Phone Number: (+84) 382-609-982</p>
-						<p>Email: ht10082001@gmail.com</p>
-						<p>University: Da Nang University of Science and Technology</p>
+						<h3>THÔNG TIN CÁ NHÂN</h3>
+						<p>Ngày sinh : 10/08/2001</p>
+						<p>Quê quán : Hải Trường, Hải Lăng, Quảng Trị</p>
+						<p>Địa chỉ hiện nay : 08 Hà Văn Tính, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng</p>
+						<p>Trường Đại học : Trường Đại học Bách Khoa - Đại học Đà Nẵng</p>
+						<p>Số điện thoại : (+84) 382-609-982</p>
+						<p>Email : ht10082001@gmail.com</p>
 					</div>
 				</section>
 			</Col>

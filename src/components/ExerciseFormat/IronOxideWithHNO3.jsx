@@ -41,7 +41,7 @@ export default function IronOxideWithHNO3() {
 							</Form.Text>
 						</Form.Group>
 
-						<Form.Label className="text-primary">Thể tích khí :</Form.Label>
+						<Form.Label className="text-primary">Thể tích khí thoát ra :</Form.Label>
 
 						<Form.Row>
 							<Form.Group as={Col} controlId="NOVolume">
@@ -103,8 +103,7 @@ export default function IronOxideWithHNO3() {
 				</Col>
 
 				<Col sm={6}>
-					<Image width="80%" height="auto"
-						src="" />
+
 				</Col>
 			</Row >
 		</Container >
