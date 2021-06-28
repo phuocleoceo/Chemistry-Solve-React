@@ -1,65 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Button, Row, Col, Form, Image, Container } from 'react-bootstrap';
+import { useSelector, useDispatch } from "react-redux";
+import { calculate, resetState } from "../../actions/formatAction";
 
 export default function AlO2WithH() {
-	const [result, setResult] = useState({
-		comment: "", Al_OH3: 0, Al_3Plus: 0,
-		AlO2_Minus_Remnant: 0, HPlus_Remnant: 0
-	});
+	const result = useSelector((state) => state.format5);
+	const dispatch = useDispatch();
+	useEffect(() => dispatch(resetState()), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		const AlO2_Minus = parseFloat(e.target.AlO2Minus.value);
-		const H_Plus = parseFloat(e.target.HPlus.value);
-		const T = H_Plus / AlO2_Minus;
-		let commentValue = "";
-		let AlOH3 = 0;
-		let Al3Plus = 0;
-		let AlO2MinusRemnant = 0;
-		let HPlusRemnant = 0;
-		if (T < 1) {
-			commentValue = "AlO2- dư, H+ hết, tạo Al(OH)3 kết tủa";
-			AlOH3 = H_Plus;
-			AlO2MinusRemnant = AlO2_Minus - H_Plus;
-			Al3Plus = 0;
-			HPlusRemnant = 0;
-		}
-		else if (T === 1) {
-			commentValue = "AlO2- và H+ phản ứng vừa đủ, tạo Al(OH)3 kết tủa cực đại";
-			AlOH3 = H_Plus;
-			AlO2MinusRemnant = 0;
-			Al3Plus = 0;
-			HPlusRemnant = 0;
-		}
-		else if (T < 4) {
-			commentValue = "H+ dư hoà tan 1 phần kết tủa Al(OH)3 thành Al3+ rồi hết";
-			AlOH3 = (4 * AlO2_Minus - H_Plus) / 3;
-			AlO2MinusRemnant = 0;
-			Al3Plus = AlO2_Minus - AlOH3;
-			HPlusRemnant = 0;
-		}
-		else if (T === 4) {
-			commentValue = "H+ dư hoà tan hết Al(OH)3 thành Al3+ rồi hết";
-			AlOH3 = 0;
-			AlO2MinusRemnant = 0;
-			Al3Plus = AlO2_Minus;
-			HPlusRemnant = 0;
-		}
-		else {
-			commentValue = "H+ dư hoà tan hết Al(OH)3 thành Al3+ và vẫn dư";
-			AlOH3 = 0;
-			AlO2MinusRemnant = 0;
-			Al3Plus = AlO2_Minus;
-			HPlusRemnant = H_Plus - 4 * AlO2_Minus;
-		}
-
-		setResult({
-			comment: commentValue,
-			Al_OH3: AlOH3,
-			Al_3Plus: Al3Plus,
-			AlO2_Minus_Remnant: AlO2MinusRemnant,
-			HPlus_Remnant: HPlusRemnant
-		});
+		const input = {
+			AlO2_Minus: parseFloat(e.target.AlO2Minus.value),
+			H_Plus: parseFloat(e.target.HPlus.value)
+		};
+		const action = calculate(input);
+		dispatch(action);
 	}
 	return (
 		<Container style={{ marginTop: '1%' }}>
