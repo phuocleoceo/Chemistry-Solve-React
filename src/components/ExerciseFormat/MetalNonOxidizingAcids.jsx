@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { Button, Row, Col, Form, Image, Container } from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
-import { calculateSalt, resetState } from '../../actions/format1Action';
+import React, { useEffect } from "react";
+import { Button, Row, Col, Form, Image, Container } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { calculateSalt, resetState } from "../../actions/format1Action";
 
 export default function MetalNonOxidizingAcids() {
-	const salt = useSelector(state => state.format1);
+	const salt = useSelector((state) => state.format1);
 	const dispatch = useDispatch();
 	useEffect(() => dispatch(resetState()), [dispatch]);
 
@@ -13,22 +13,28 @@ export default function MetalNonOxidizingAcids() {
 		const input = {
 			metalMass: parseFloat(e.target.MetalMass.value),
 			h2Mol: parseFloat(e.target.H2Volume.value) / 22.4,
-			axitType: e.target.Axit.value
+			axitType: e.target.Axit.value,
 		};
 		const action = calculateSalt(input);
 		dispatch(action);
 	}
 	return (
-		<Container style={{ marginTop: '1%' }}>
+		<Container style={{ marginTop: "1%" }}>
 			<Row>
 				<Col sm={6}>
 					<Form onSubmit={handleSubmit}>
-						<Form.Label className="font-weight-bold text-success">Trước phản ứng :</Form.Label>
+						<Form.Label className="font-weight-bold text-success">
+							Trước phản ứng :
+						</Form.Label>
 
 						<Form.Group controlId="MetalMass">
 							<Form.Label>Khối lượng kim loại (gam)</Form.Label>
-							<Form.Control type="text" name="MetalMass" required
-								placeholder="Nhập khối lượng..." />
+							<Form.Control
+								type="text"
+								name="MetalMass"
+								required
+								placeholder="Nhập khối lượng..."
+							/>
 							<Form.Text className="text-muted">
 								Lưu ý : Kim loại phải đứng trước H trong dãy hoạt động !
 							</Form.Text>
@@ -44,8 +50,12 @@ export default function MetalNonOxidizingAcids() {
 
 						<Form.Group controlId="H2Volume">
 							<Form.Label>Thể tích H2 (lít)</Form.Label>
-							<Form.Control type="text" name="H2Volume" required
-								placeholder="Nhập thể tích H2 thu được..." />
+							<Form.Control
+								type="text"
+								name="H2Volume"
+								required
+								placeholder="Nhập thể tích H2 thu được..."
+							/>
 						</Form.Group>
 
 						<Form.Group>
@@ -56,27 +66,37 @@ export default function MetalNonOxidizingAcids() {
 					</Form>
 				</Col>
 
-				<Col sm={{ span: 5, offset: 1 }} style={{ marginTop: '5%' }}>
-					<Image width="100%" height="auto"
-						src="https://cdn.vungoi.vn/picture/2018/0405/2.PNG" />
+				<Col sm={{ span: 5, offset: 1 }} style={{ marginTop: "5%" }}>
+					<Image
+						width="100%"
+						height="auto"
+						src="https://cdn.vungoi.vn/picture/2018/0405/2.PNG"
+					/>
 				</Col>
-			</Row >
+			</Row>
 			<hr />
 			<Row>
 				<Col sm={6}>
 					<Form>
-						<Form.Label className="font-weight-bold text-success">Sau phản ứng :</Form.Label>
+						<Form.Label className="font-weight-bold text-success">
+							Sau phản ứng :
+						</Form.Label>
 						<Form.Group controlId="SaltMass">
 							<Form.Label>Khối lượng muối (gam)</Form.Label>
-							<Form.Control value={salt} type="text" name="SaltMass" plaintext required readOnly />
+							<Form.Control
+								value={salt}
+								type="text"
+								name="SaltMass"
+								plaintext
+								required
+								readOnly
+							/>
 						</Form.Group>
 					</Form>
 				</Col>
 
-				<Col sm={6}>
-
-				</Col>
-			</Row >
-		</Container >
-	)
+				<Col sm={6}></Col>
+			</Row>
+		</Container>
+	);
 }
