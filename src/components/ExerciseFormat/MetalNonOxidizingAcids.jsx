@@ -6,16 +6,14 @@ import { calculateSalt, resetState } from '../../actions/format1Action';
 export default function MetalNonOxidizingAcids() {
 	const salt = useSelector(state => state.format1);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), []);
+	useEffect(() => dispatch(resetState()), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		const h2_Mol = parseFloat(e.target.H2Volume.value) / 22.4;
-		const axitType = e.target.Axit.value;
 		const input = {
 			metalMass: parseFloat(e.target.MetalMass.value),
-			h2Mol: h2_Mol,
-			axitMass: (axitType === "HCl") ? (h2_Mol * 2 * 36.5) : (h2_Mol * 98)
+			h2Mol: parseFloat(e.target.H2Volume.value) / 22.4,
+			axitType: e.target.Axit.value
 		};
 		const action = calculateSalt(input);
 		dispatch(action);
@@ -32,7 +30,7 @@ export default function MetalNonOxidizingAcids() {
 							<Form.Control type="text" name="MetalMass" required
 								placeholder="Nhập khối lượng..." />
 							<Form.Text className="text-muted">
-								Lưu ý kim loại phải đứng trước H trong dãy hoạt động !
+								Lưu ý : Kim loại phải đứng trước H trong dãy hoạt động !
 							</Form.Text>
 						</Form.Group>
 
