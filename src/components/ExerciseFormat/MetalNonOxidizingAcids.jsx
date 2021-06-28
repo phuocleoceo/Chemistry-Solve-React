@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Button, Row, Col, Form, Image, Container } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { calculateSalt, resetState } from "../../actions/format1Action";
+import { calculate, resetState } from "../../actions/formatAction";
 
 export default function MetalNonOxidizingAcids() {
 	const salt = useSelector((state) => state.format1);
@@ -15,7 +15,7 @@ export default function MetalNonOxidizingAcids() {
 			h2Mol: parseFloat(e.target.H2Volume.value) / 22.4,
 			axitType: e.target.Axit.value,
 		};
-		const action = calculateSalt(input);
+		const action = calculate(input);
 		dispatch(action);
 	}
 	return (

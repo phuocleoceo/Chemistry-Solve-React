@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Button, Row, Col, Form, Container } from "react-bootstrap";
 import { useSelector, useDispatch } from 'react-redux';
-import { calculate, resetState } from '../../actions/format2Action';
+import { calculate, resetState } from '../../actions/formatAction';
 
 export default function CO2WithOH() {
 	const result = useSelector(state => state.format2);
