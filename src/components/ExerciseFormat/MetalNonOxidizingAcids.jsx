@@ -70,7 +70,7 @@ export default function MetalNonOxidizingAcids() {
 					<Image
 						width="100%"
 						height="auto"
-						src="https://cdn.vungoi.vn/picture/2018/0405/2.PNG"
+						src="/img/format1.png"
 					/>
 				</Col>
 			</Row>

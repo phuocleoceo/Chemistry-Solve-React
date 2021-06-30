@@ -146,7 +146,7 @@ export default function HWithHCO3AndCO3() {
 					</Form.Row>
 				</Col>
 				<Col sm={6}>
-					<Image src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-9/208463689_826388148002452_9102463439043803014_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=0debeb&_nc_ohc=PN9AcgxZ0RIAX9sJh_u&_nc_ht=scontent-hkg4-1.xx&oh=e43070f2b03d8190af2fa1e945da0ee0&oe=60DF4224"
+					<Image src="/img/format6.jpg"
 						width="100%" height="auto" style={{ marginTop: '10%' }} />
 				</Col>
 			</Row>

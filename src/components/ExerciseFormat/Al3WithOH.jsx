@@ -57,7 +57,7 @@ export default function Al3WithOH() {
 
 				<Col sm={{ span: 5, offset: 1 }}>
 					<Image
-						src="https://thietbiruaxegiare.net/wp-content/uploads/2020/11/aloh3-ket-tua-mau-gi-1.jpg"
+						src="/img/format4.jpg"
 						width="100%"
 						height="auto"
 					/>

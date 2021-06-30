@@ -101,7 +101,7 @@ export default function IronOxideWithHNO3() {
 
 				<Col sm={{ span: 5, offset: 1 }}>
 					<Image
-						src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.6435-9/206369814_826366101337990_5656118647716604253_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=0debeb&_nc_ohc=d-FeQ9kp9YoAX_2qogJ&tn=LmsjCjdx2PD-F9Wv&_nc_ht=scontent-hkg4-1.xx&oh=823ff0a91244059a673fbabb91db0377&oe=60DDA34A"
+						src="/img/format3.jpg"
 						width="100%"
 						height="auto"
 					/>

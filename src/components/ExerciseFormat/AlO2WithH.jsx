@@ -45,7 +45,7 @@ export default function AlO2WithH() {
 				</Col>
 
 				<Col sm={{ span: 5, offset: 1 }}>
-					<Image src="https://media1.thehungryjpeg.com/thumbs2/800_66291_118ab9ed20ef29c5391b1de6cb5737d16e516f38_chemistry-science-svg-dxf-eps-png-files.jpg"
+					<Image src="/img/format5.jpg"
 						width="82%" height="auto" />
 				</Col>
 			</Row >

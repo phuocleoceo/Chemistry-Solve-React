@@ -6,7 +6,7 @@ export default function Home() {
 		<Row style={{ marginTop: '2%' }}>
 			<Col sm={6}>
 				<Image
-					src="/avatar.jpg"
+					src="/img/avatar.jpg"
 					width="80%"
 					height="auto"
 					className="d-inline-block avatar-PLC"
