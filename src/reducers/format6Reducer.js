@@ -34,29 +34,31 @@ const format6Reducer = (state = initialState, action) => {
           HCO3MinusRemnant = H_Plus + HCO3_Minus;
           CO3_2MinusRemnant = CO3_2Minus - H_Plus;
         }
-        H_Plus = H_Plus - CO3_2Minus; // trừ đi phần H+ đã pu với CO3(2-)
-        HCO3_Minus = HCO3_Minus + CO3_2Minus; // CO3(2-) chuyển hết thành HCO3-
-        if (H_Plus < HCO3_Minus) {
-          //CO3(2-) đã chuyển hoá hết thành HCO3-
-          commentValue = "H+ p/ứ hết CO3(2-) và 1 phần HCO3-, tạo CO2";
-          CO2Value = H_Plus; // 99.99% nH+ dư < nHCO3-
-          HPlusRemnant = 0;
-          HCO3MinusRemnant = HCO3_Minus - H_Plus;
-          CO3_2MinusRemnant = 0;
-        }
-        if (H_Plus === HCO3_Minus) {
-          commentValue = "H+(hết) p/ứ hết CO3(2-) và HCO3-, CO2 cực đại";
-          CO2Value = HCO3_Minus;
-          HPlusRemnant = 0;
-          HCO3MinusRemnant = 0;
-          CO3_2MinusRemnant = 0;
-        }
-        if (H_Plus > HCO3_Minus) {
-          commentValue = "H+(dư) p/ứ hết CO3(2-) và HCO3-, CO2 cực đại";
-          CO2Value = HCO3_Minus;
-          HPlusRemnant = H_Plus - HCO3_Minus;
-          HCO3MinusRemnant = 0;
-          CO3_2MinusRemnant = 0;
+        if (H_Plus > CO3_2Minus) {
+          H_Plus = H_Plus - CO3_2Minus; // trừ đi phần H+ đã pu với CO3(2-)
+          HCO3_Minus = HCO3_Minus + CO3_2Minus; // CO3(2-) chuyển hết thành HCO3-
+          if (H_Plus < HCO3_Minus) {
+            //CO3(2-) đã chuyển hoá hết thành HCO3-
+            commentValue = "H+ p/ứ hết CO3(2-) và 1 phần HCO3-, tạo CO2";
+            CO2Value = H_Plus; // 99.99% nH+ dư < nHCO3-
+            HPlusRemnant = 0;
+            HCO3MinusRemnant = HCO3_Minus - H_Plus;
+            CO3_2MinusRemnant = 0;
+          }
+          if (H_Plus === HCO3_Minus) {
+            commentValue = "H+(hết) p/ứ hết CO3(2-) và HCO3-, CO2 cực đại";
+            CO2Value = HCO3_Minus;
+            HPlusRemnant = 0;
+            HCO3MinusRemnant = 0;
+            CO3_2MinusRemnant = 0;
+          }
+          if (H_Plus > HCO3_Minus) {
+            commentValue = "H+(dư) p/ứ hết CO3(2-) và HCO3-, CO2 cực đại";
+            CO2Value = HCO3_Minus;
+            HPlusRemnant = H_Plus - HCO3_Minus;
+            HCO3MinusRemnant = 0;
+            CO3_2MinusRemnant = 0;
+          }
         }
       }
       //Trường hợp 2: Xảy ra đồng thời 2 phản ứng

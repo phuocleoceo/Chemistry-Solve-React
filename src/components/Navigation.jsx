@@ -10,7 +10,7 @@ export default function Navigation() {
 				<Nav>
 					<Nav.Link as={Link} className="d-inline p-2 text-white" to="/">
 						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Creative-Tail-chemical.svg/1200px-Creative-Tail-chemical.svg.png"
+							src="/img/icon.png"
 							width="30"
 							height="30"
 							className="d-inline-block align-top"
