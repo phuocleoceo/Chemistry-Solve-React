@@ -1,5 +1,7 @@
 # Simple App For Fun - Chemistry is so interesting
 
+## Redux is not necessary but I used it for practice
+
 ### Installed Package
 react-router-dom
 
@@ -25,5 +27,5 @@ redux react-redux
     npm start
    ```
 
-### Screen-shot
+### Screen-shot ( Responsive )
 <img src="https://raw.githubusercontent.com/phuocleoceo/Chemistry-Solve-React/master/Capture.JPG"  alt="HP">

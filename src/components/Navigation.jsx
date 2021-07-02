@@ -20,7 +20,7 @@ export default function Navigation() {
 						Trang chủ
 					</Nav.Link>
 
-					<NavDropdown title={<span className="text-white">Dạng bài tập</span>}
+					<NavDropdown title={<span className="text-white">Dạng bài tập vô cơ</span>}
 						className="nav-down" id="basic-nav-dropdown">
 						<NavDropdown.Item>
 							<Nav.Link as={Link} to="/format1" className="d-inline p-2 text-dark">
@@ -57,6 +57,16 @@ export default function Navigation() {
 								H+ tác dụng hỗn hợp HCO3- và (CO3)2-
 							</Nav.Link>
 						</NavDropdown.Item>
+					</NavDropdown>
+
+					<NavDropdown title={<span className="text-white">Dạng bài tập hữu cơ</span>}
+						className="nav-down" id="basic-nav-dropdown">
+						<NavDropdown.Item>
+							<Nav.Link as={Link} to="/format7" className="d-inline p-2 text-dark">
+								Lên men glucozơ
+							</Nav.Link>
+						</NavDropdown.Item>
+
 					</NavDropdown>
 				</Nav>
 			</Navbar.Collapse>

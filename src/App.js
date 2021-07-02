@@ -2,12 +2,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
-import MetalNonOxidizingAcids from './components/ExerciseFormat/MetalNonOxidizingAcids';
-import CO2WithOH from './components/ExerciseFormat/CO2WithOH';
-import IronOxideWithHNO3 from './components/ExerciseFormat/IronOxideWithHNO3';
-import Al3WithOH from './components/ExerciseFormat/Al3WithOH';
-import AlO2WithH from './components/ExerciseFormat/AlO2WithH';
-import HWithHCO3AndCO3 from './components/ExerciseFormat/HWithHCO3AndCO3';
+import MetalNonOxidizingAcids from './components/InorganicFormat/MetalNonOxidizingAcids';
+import CO2WithOH from './components/InorganicFormat/CO2WithOH';
+import IronOxideWithHNO3 from './components/InorganicFormat/IronOxideWithHNO3';
+import Al3WithOH from './components/InorganicFormat/Al3WithOH';
+import AlO2WithH from './components/InorganicFormat/AlO2WithH';
+import HWithHCO3AndCO3 from './components/InorganicFormat/HWithHCO3AndCO3';
+import GlucozoFermentation from './components/OrganicFormat/GlucozoFermentation';
 import './App.css';
 
 export default function App() {
@@ -24,6 +25,8 @@ export default function App() {
           <Route path='/format4' component={Al3WithOH} />
           <Route path='/format5' component={AlO2WithH} />
           <Route path='/format6' component={HWithHCO3AndCO3} />
+
+          <Route path='/format7' component={GlucozoFermentation} />
         </Switch>
       </Container>
     </BrowserRouter>
