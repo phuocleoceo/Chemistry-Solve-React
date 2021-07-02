@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import './App.css';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 import MetalNonOxidizingAcids from './components/InorganicFormat/MetalNonOxidizingAcids';
@@ -9,7 +10,7 @@ import Al3WithOH from './components/InorganicFormat/Al3WithOH';
 import AlO2WithH from './components/InorganicFormat/AlO2WithH';
 import HWithHCO3AndCO3 from './components/InorganicFormat/HWithHCO3AndCO3';
 import GlucozoFermentation from './components/OrganicFormat/GlucozoFermentation';
-import './App.css';
+import StructuralFormulaCombustion from './components/OrganicFormat/StructuralFormulaCombustion';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path='/format6' component={HWithHCO3AndCO3} />
 
           <Route path='/format7' component={GlucozoFermentation} />
+          <Route path='/format8' component={StructuralFormulaCombustion} />
         </Switch>
       </Container>
     </BrowserRouter>

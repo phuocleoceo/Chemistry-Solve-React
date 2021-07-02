@@ -67,6 +67,12 @@ export default function Navigation() {
 							</Nav.Link>
 						</NavDropdown.Item>
 
+						<NavDropdown.Item>
+							<Nav.Link as={Link} to="/format8" className="d-inline p-2 text-dark">
+								Tìm CTCT từ phản ứng đốt cháy
+							</Nav.Link>
+						</NavDropdown.Item>
+
 					</NavDropdown>
 				</Nav>
 			</Navbar.Collapse>
