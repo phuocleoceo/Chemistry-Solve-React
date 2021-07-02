@@ -111,7 +111,7 @@ export default function StructuralFormulaCombustion() {
 					</Form.Group>
 				</Col>
 				<Col sm={6}>
-					<Image src="/img/format8.jpg"
+					<Image src="/img/format8.JPG"
 						width="90%" height="auto" />
 				</Col>
 			</Row>
