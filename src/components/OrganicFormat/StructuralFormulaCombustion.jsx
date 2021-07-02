@@ -11,8 +11,13 @@ export default function StructuralFormulaCombustion() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-
+			InorganicMass: parseFloat(e.target.InorganicMass.value),
+			MolMass: parseFloat(e.target.MolMass.value),
+			Case: parseInt(e.target.Case.value),
+			Variation: parseFloat(e.target.Variation.value),
+			Precipitate: parseFloat(e.target.Precipitate.value)
 		};
+		console.log(input);
 		const action = calculate(input);
 		dispatch(action);
 	}
@@ -91,7 +96,7 @@ export default function StructuralFormulaCombustion() {
 			<Row>
 				<Col sm={6}>
 					<Form.Label className="font-weight-bold text-success">
-						Kết quả :
+						Kết quả (xấp xỉ):
 					</Form.Label>
 
 					<Form.Group controlId="Comment">
