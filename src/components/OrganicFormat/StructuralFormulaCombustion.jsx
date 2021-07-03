@@ -96,7 +96,7 @@ export default function StructuralFormulaCombustion() {
 			<Row>
 				<Col sm={6}>
 					<Form.Label className="font-weight-bold text-success">
-						Kết quả (xấp xỉ):
+						Kết quả :
 					</Form.Label>
 
 					<Form.Group controlId="Comment">
