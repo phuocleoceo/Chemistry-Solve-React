@@ -11,8 +11,8 @@ export default function AlO2WithH() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			AlO2_Minus: parseFloat(e.target.AlO2Minus.value),
-			H_Plus: parseFloat(e.target.HPlus.value)
+			AlO2_Minus: e.target.AlO2Minus.value,
+			H_Plus: e.target.HPlus.value
 		};
 		const action = calculate(5, input);
 		dispatch(action);
