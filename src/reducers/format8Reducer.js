@@ -10,7 +10,7 @@ const format8Reducer = (state = initialState, action) => {
       const Variation = new Decimal(action.payload.Variation);
       const Precipitate = new Decimal(action.payload.Precipitate);
       const molCO2 = Precipitate.dividedBy(100);
-      let molH2O = new Decimal(0);
+      let molH2O = 0;
       if (action.payload.Case === 1)
         molH2O = Variation.minus(molCO2.times(44)).dividedBy(18);
       // molH2O = (Variation - 44 * molCO2) / 18;
@@ -31,7 +31,7 @@ const format8Reducer = (state = initialState, action) => {
       const factor = MolMass.dividedBy((molC.times(12)).plus(molH.times(1)).plus(molO.times(16)));
 
       let result = "C" + molC.times(factor) + "H" + molH.times(factor);
-      if (molO.greaterThan(0)) result += "O" + molO.times(factor);
+      if (molO > 0) result += "O" + molO.times(factor);
       return result;
     }
     case "RESET_STATE_8":

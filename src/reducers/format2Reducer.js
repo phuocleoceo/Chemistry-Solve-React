@@ -1,3 +1,5 @@
+import Decimal from 'decimal.js';
+
 const initialState = {
   comment: "",
   Na_Plus: 0,
@@ -12,10 +14,16 @@ const initialState = {
 
 const format2Reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "CALCULATE": {
-      const { molCO2, molNaOH, molKOH, molBaOH2, molCaOH2 } = action.payload;
-      const molOH = molNaOH + molKOH + molBaOH2 * 2 + molCaOH2 * 2;
-      const T = molOH / molCO2;
+    case "CALCULATE_2": {
+      const molCO2 = new Decimal(action.payload.molCO2);
+      const molNaOH = new Decimal(action.payload.molNaOH);
+      const molKOH = new Decimal(action.payload.molKOH);
+      const molBaOH2 = new Decimal(action.payload.molBaOH2);
+      const molCaOH2 = new Decimal(action.payload.molCaOH2);
+      //const molOH = molNaOH + molKOH + molBaOH2 * 2 + molCaOH2 * 2;
+      const molOH = molNaOH.plus(molKOH).plus(molBaOH2.times(2)).plus(molCaOH2.times(2));
+      //const T = molOH / molCO2;
+      const T = molOH.dividedBy(molCO2);
       // calculate
       let commentValue = "";
       let OHMinusRemnant = 0;
@@ -26,7 +34,7 @@ const format2Reducer = (state = initialState, action) => {
       if (T <= 1) {
         commentValue = "Phản ứng chỉ tạo HCO3-, không kết tủa";
         OHMinusRemnant = 0;
-        CO2Remnant = molCO2 - molOH;
+        CO2Remnant = molCO2.minus(molOH);
         HCO3Minus = molOH;
         CO32Minus = 0;
       }
@@ -36,14 +44,14 @@ const format2Reducer = (state = initialState, action) => {
         commentValue = "Phản ứng tạo hỗn hợp HCO3- và (CO3)2-";
         OHMinusRemnant = 0;
         CO2Remnant = 0;
-        const molCO3 = molOH - molCO2;
+        const molCO3 = molOH.minus(molCO2);
         HCO3Minus = molCO3;
-        CO32Minus = molCO2 - molCO3;
+        CO32Minus = molCO2.minus(molCO3);
       }
       // 2OH- + CO2 => CO3(2-) + H2O
       else {
         commentValue = "Phản ứng chỉ tạo (CO3)2-";
-        OHMinusRemnant = molOH - molCO2 * 2;
+        OHMinusRemnant = molOH.minus(molCO2.times(2));
         CO2Remnant = 0;
         HCO3Minus = 0;
         CO32Minus = molCO2;
@@ -60,7 +68,7 @@ const format2Reducer = (state = initialState, action) => {
         CO2_Remnant: CO2Remnant,
       };
     }
-    case "RESET_STATE":
+    case "RESET_STATE_2":
       return initialState;
     default:
       return state;
