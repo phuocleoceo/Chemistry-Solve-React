@@ -6,7 +6,7 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function IronOxideWithHNO3() {
 	const result = useSelector((state) => state.format3);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(3)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -17,7 +17,7 @@ export default function IronOxideWithHNO3() {
 			molN2O: parseFloat(e.target.N2OVolume.value) / 22.4,
 			molN2: parseFloat(e.target.N2Volume.value) / 22.4,
 		};
-		const action = calculate(input);
+		const action = calculate(3, input);
 		dispatch(action);
 	}
 

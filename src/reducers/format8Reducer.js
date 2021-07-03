@@ -29,8 +29,9 @@ const format8Reducer = (state = initialState, action) => {
       const molO = InorganicMass.minus(molC.times(12)).minus(molH.times(1)).dividedBy(16);
       //const factor = MolMass / (molC * 12 + molH * 1 + molO * 16);
       const factor = MolMass.dividedBy((molC.times(12)).plus(molH.times(1)).plus(molO.times(16)));
+
       let result = "C" + molC.times(factor) + "H" + molH.times(factor);
-      if (molO > 0) result += "O" + molO.times(factor);
+      if (molO.greaterThan(0)) result += "O" + molO.times(factor);
       return result;
     }
     case "RESET_STATE_8":

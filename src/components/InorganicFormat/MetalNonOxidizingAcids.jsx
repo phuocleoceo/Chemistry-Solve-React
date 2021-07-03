@@ -6,7 +6,7 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function MetalNonOxidizingAcids() {
 	const salt = useSelector((state) => state.format1);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(1)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -15,7 +15,7 @@ export default function MetalNonOxidizingAcids() {
 			h2Mol: parseFloat(e.target.H2Volume.value) / 22.4,
 			axitType: e.target.Axit.value,
 		};
-		const action = calculate(input);
+		const action = calculate(1, input);
 		dispatch(action);
 	}
 	return (

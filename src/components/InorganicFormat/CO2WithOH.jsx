@@ -6,7 +6,7 @@ import { calculate, resetState } from '../../actions/formatAction';
 export default function CO2WithOH() {
 	const result = useSelector(state => state.format2);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(2)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -18,7 +18,7 @@ export default function CO2WithOH() {
 			molBaOH2: parseFloat(e.target.CMBaOH2.value) * VBazo,
 			molCaOH2: parseFloat(e.target.CMCaOH2.value) * VBazo
 		};
-		const action = calculate(input);
+		const action = calculate(2, input);
 		dispatch(action);
 	}
 

@@ -6,7 +6,7 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function HWithHCO3AndCO3() {
 	const result = useSelector((state) => state.format6);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(6)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -16,7 +16,7 @@ export default function HWithHCO3AndCO3() {
 			H_Plus: parseFloat(e.target.HPlus.value),
 			Case: parseInt(e.target.Case.value),
 		};
-		const action = calculate(input);
+		const action = calculate(6, input);
 		dispatch(action);
 	}
 	return (

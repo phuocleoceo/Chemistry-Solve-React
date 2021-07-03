@@ -6,7 +6,7 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function AlO2WithH() {
 	const result = useSelector((state) => state.format5);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(5)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -14,7 +14,7 @@ export default function AlO2WithH() {
 			AlO2_Minus: parseFloat(e.target.AlO2Minus.value),
 			H_Plus: parseFloat(e.target.HPlus.value)
 		};
-		const action = calculate(input);
+		const action = calculate(5, input);
 		dispatch(action);
 	}
 	return (
