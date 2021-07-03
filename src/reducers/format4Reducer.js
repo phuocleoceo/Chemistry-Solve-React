@@ -1,3 +1,5 @@
+import Decimal from 'decimal.js';
+
 const initialState = {
   comment: "",
   Al_OH3: 0,
@@ -8,33 +10,34 @@ const initialState = {
 
 const format4Reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "CALCULATE": {
-      const { Al_3Plus, OH_Minus } = action.payload;
-      const T = OH_Minus / Al_3Plus;
+    case "CALCULATE_4": {
+      const Al_3Plus = new Decimal(action.payload.Al_3Plus);
+      const OH_Minus = new Decimal(action.payload.OH_Minus);
+      const T = OH_Minus.dividedBy(Al_3Plus);
       let commentValue = "";
       let AlOH3 = 0;
       let AlO2Minus = 0;
       let Al3PlusRemnant = 0;
       let OHMinusRemnant = 0;
-      if (T < 3) {
+      if (T.lessThan(3)) {
         commentValue = "Al3+ dư, OH- hết , tạo Al(OH)3 kết tủa";
-        AlOH3 = OH_Minus / 3;
-        Al3PlusRemnant = Al_3Plus - OH_Minus / 3;
+        AlOH3 = OH_Minus.dividedBy(3);
+        Al3PlusRemnant = Al_3Plus.minus(OH_Minus.dividedBy(3));
         AlO2Minus = 0;
         OHMinusRemnant = 0;
-      } else if (T === 3) {
+      } else if (T.equals(3)) {
         commentValue = "Al3+ và OH- phản ứng vừa đủ, tạo Al(OH)3 kết tủa cực đại";
-        AlOH3 = OH_Minus / 3;
+        AlOH3 = OH_Minus.dividedBy(3);
         Al3PlusRemnant = 0;
         AlO2Minus = 0;
         OHMinusRemnant = 0;
-      } else if (T < 4) {
+      } else if (T.lessThan(4)) {
         commentValue = "OH- dư hoà tan 1 phần Al(OH)3 tạo AlO2- rồi mới hết";
-        AlOH3 = 4 * Al_3Plus - OH_Minus;
+        AlOH3 = Al_3Plus.times(4).minus(OH_Minus);
         Al3PlusRemnant = 0;
-        AlO2Minus = Al_3Plus - AlOH3;
+        AlO2Minus = Al_3Plus.minus(AlOH3);
         OHMinusRemnant = 0;
-      } else if (T === 4) {
+      } else if (T.equals(4)) {
         commentValue = "OH- dư hoà tan hết Al(OH)3 thành AlO2- rồi hết";
         AlOH3 = 0;
         Al3PlusRemnant = 0;
@@ -45,7 +48,7 @@ const format4Reducer = (state = initialState, action) => {
         AlOH3 = 0;
         Al3PlusRemnant = 0;
         AlO2Minus = Al_3Plus;
-        OHMinusRemnant = OH_Minus - 4 * Al_3Plus;
+        OHMinusRemnant = OH_Minus.minus(Al_3Plus.times(4));
       }
       return {
         comment: commentValue,
@@ -55,7 +58,7 @@ const format4Reducer = (state = initialState, action) => {
         OH_Minus_Remnant: OHMinusRemnant,
       };
     }
-    case "RESET_STATE":
+    case "RESET_STATE_4":
       return initialState;
     default:
       return state;

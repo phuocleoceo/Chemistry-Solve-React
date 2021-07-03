@@ -32,7 +32,7 @@ const format2Reducer = (state = initialState, action) => {
       let HCO3Minus = 0;
       let CO32Minus = 0;
       //OH- + CO2 => HCO3- , OH- hết
-      if (T <= 1) {
+      if (T.lessThanOrEqualTo(1)) {
         commentValue = "Phản ứng chỉ tạo HCO3-, không kết tủa";
         OHMinusRemnant = 0;
         CO2Remnant = molCO2.minus(molOH);
@@ -41,7 +41,7 @@ const format2Reducer = (state = initialState, action) => {
       }
       //OH- + CO2 => HCO3-
       //2OH- + CO2 => CO3(2-) + H2O
-      else if (T < 2) {
+      else if (T.lessThan(2)) {
         commentValue = "Phản ứng tạo hỗn hợp HCO3- và (CO3)2-";
         OHMinusRemnant = 0;
         CO2Remnant = 0;
