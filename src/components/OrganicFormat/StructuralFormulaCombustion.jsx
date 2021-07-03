@@ -6,7 +6,7 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function StructuralFormulaCombustion() {
 	const result = useSelector((state) => state.format8);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(8)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
@@ -18,7 +18,7 @@ export default function StructuralFormulaCombustion() {
 			Precipitate: parseFloat(e.target.Precipitate.value)
 		};
 		console.log(input);
-		const action = calculate(input);
+		const action = calculate(8, input);
 		dispatch(action);
 	}
 	return (

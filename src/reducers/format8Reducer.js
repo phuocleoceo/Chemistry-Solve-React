@@ -4,7 +4,7 @@ const initialState = "CxHyOz";
 
 const format8Reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "CALCULATE": {
+    case "CALCULATE_8": {
       const InorganicMass = new Decimal(action.payload.InorganicMass);
       const MolMass = new Decimal(action.payload.MolMass);
       const Variation = new Decimal(action.payload.Variation);
@@ -33,7 +33,7 @@ const format8Reducer = (state = initialState, action) => {
       if (molO > 0) result += "O" + molO.times(factor);
       return result;
     }
-    case "RESET_STATE":
+    case "RESET_STATE_8":
       return initialState;
     default:
       return state;
