@@ -6,19 +6,19 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function StructuralFormulaCombustion() {
 	const result = useSelector((state) => state.format8);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(8)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			InorganicMass: parseFloat(e.target.InorganicMass.value),
-			MolMass: parseFloat(e.target.MolMass.value),
+			InorganicMass: e.target.InorganicMass.value,
+			MolMass: e.target.MolMass.value,
 			Case: parseInt(e.target.Case.value),
-			Variation: parseFloat(e.target.Variation.value),
-			Precipitate: parseFloat(e.target.Precipitate.value)
+			Variation: e.target.Variation.value,
+			Precipitate: e.target.Precipitate.value
 		};
 		console.log(input);
-		const action = calculate(input);
+		const action = calculate(8, input);
 		dispatch(action);
 	}
 	return (
@@ -96,7 +96,7 @@ export default function StructuralFormulaCombustion() {
 			<Row>
 				<Col sm={6}>
 					<Form.Label className="font-weight-bold text-success">
-						Kết quả (xấp xỉ):
+						Kết quả :
 					</Form.Label>
 
 					<Form.Group controlId="Comment">

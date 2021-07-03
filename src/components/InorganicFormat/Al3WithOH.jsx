@@ -6,15 +6,15 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function Al3WithOH() {
 	const result = useSelector((state) => state.format4);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(4)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			Al_3Plus: parseFloat(e.target.Al3Plus.value),
-			OH_Minus: parseFloat(e.target.OHMinus.value),
+			Al_3Plus: e.target.Al3Plus.value,
+			OH_Minus: e.target.OHMinus.value,
 		};
-		const action = calculate(input);
+		const action = calculate(4, input);
 		dispatch(action);
 	}
 

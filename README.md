@@ -11,6 +11,8 @@ react-bootstrap
 
 redux react-redux
 
+decimal.js
+
 ### Installation
 
 1. Copy the address of the project

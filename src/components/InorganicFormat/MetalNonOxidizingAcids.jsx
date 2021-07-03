@@ -6,16 +6,16 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function MetalNonOxidizingAcids() {
 	const salt = useSelector((state) => state.format1);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(1)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			metalMass: parseFloat(e.target.MetalMass.value),
-			h2Mol: parseFloat(e.target.H2Volume.value) / 22.4,
+			metalMass: e.target.MetalMass.value,
+			h2Mol: e.target.H2Volume.value,
 			axitType: e.target.Axit.value,
 		};
-		const action = calculate(input);
+		const action = calculate(1, input);
 		dispatch(action);
 	}
 	return (

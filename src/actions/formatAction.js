@@ -1,12 +1,12 @@
-export const calculate = (input) => {
+export const calculate = (id, input) => {
   return {
-    type: "CALCULATE",
+    type: "CALCULATE_" + id,
     payload: input,
   };
 };
 
-export const resetState = () => {
+export const resetState = (id) => {
   return {
-    type: "RESET_STATE",
+    type: "RESET_STATE_" + id,
   };
 };

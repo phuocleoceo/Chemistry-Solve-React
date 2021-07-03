@@ -6,15 +6,15 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function GlucozoFermentation() {
 	const result = useSelector((state) => state.format7);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(7)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			GlucozoMass: parseFloat(e.target.GlucozoMass.value),
-			Efficiency: parseFloat(e.target.Efficiency.value)
+			GlucozoMass: e.target.GlucozoMass.value,
+			Efficiency: e.target.Efficiency.value
 		};
-		const action = calculate(input);
+		const action = calculate(7, input);
 		dispatch(action);
 	}
 

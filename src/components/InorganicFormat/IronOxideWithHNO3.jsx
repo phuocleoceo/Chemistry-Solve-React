@@ -6,18 +6,18 @@ import { calculate, resetState } from "../../actions/formatAction";
 export default function IronOxideWithHNO3() {
 	const result = useSelector((state) => state.format3);
 	const dispatch = useDispatch();
-	useEffect(() => dispatch(resetState()), [dispatch]);
+	useEffect(() => dispatch(resetState(3)), [dispatch]);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			OxideMass: parseFloat(e.target.OxideMass.value),
-			molNO: parseFloat(e.target.NOVolume.value) / 22.4,
-			molNO2: parseFloat(e.target.NO2Volume.value) / 22.4,
-			molN2O: parseFloat(e.target.N2OVolume.value) / 22.4,
-			molN2: parseFloat(e.target.N2Volume.value) / 22.4,
+			OxideMass: e.target.OxideMass.value,
+			molNO: e.target.NOVolume.value,
+			molNO2: e.target.NO2Volume.value,
+			molN2O: e.target.N2OVolume.value,
+			molN2: e.target.N2Volume.value,
 		};
-		const action = calculate(input);
+		const action = calculate(3, input);
 		dispatch(action);
 	}
 
