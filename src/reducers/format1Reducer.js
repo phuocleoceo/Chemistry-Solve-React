@@ -7,7 +7,7 @@ const format1Reducer = (state = initialState, action) => {
     case "CALCULATE_1": {
       const axitType = action.payload.axitType;
       const metalMass = new Decimal(action.payload.metalMass);
-      const h2Mol = new Decimal(action.payload.h2Mol);
+      const h2Mol = new Decimal(action.payload.h2Mol).dividedBy(22.4);
 
       const axitMass = (axitType === "HCl") ?
                         h2Mol.times(2).times(36.5) :

@@ -10,13 +10,13 @@ export default function CO2WithOH() {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		const VBazo = parseFloat(e.target.BazoVolume.value);
 		const input = {
-			molCO2: parseFloat(e.target.CO2Volume.value) / 22.4,
-			molNaOH: parseFloat(e.target.CMNaOH.value) * VBazo,
-			molKOH: parseFloat(e.target.CMKOH.value) * VBazo,
-			molBaOH2: parseFloat(e.target.CMBaOH2.value) * VBazo,
-			molCaOH2: parseFloat(e.target.CMCaOH2.value) * VBazo
+			molCO2: e.target.CO2Volume.value,
+			VBazo: e.target.BazoVolume.value,
+			molNaOH: e.target.CMNaOH.value,
+			molKOH: e.target.CMKOH.value,
+			molBaOH2: e.target.CMBaOH2.value,
+			molCaOH2: e.target.CMCaOH2.value
 		};
 		const action = calculate(2, input);
 		dispatch(action);

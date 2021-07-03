@@ -11,8 +11,8 @@ export default function GlucozoFermentation() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			GlucozoMass: parseFloat(e.target.GlucozoMass.value),
-			Efficiency: parseFloat(e.target.Efficiency.value)
+			GlucozoMass: e.target.GlucozoMass.value,
+			Efficiency: e.target.Efficiency.value
 		};
 		const action = calculate(7, input);
 		dispatch(action);

@@ -15,11 +15,12 @@ const initialState = {
 const format2Reducer = (state = initialState, action) => {
   switch (action.type) {
     case "CALCULATE_2": {
-      const molCO2 = new Decimal(action.payload.molCO2);
-      const molNaOH = new Decimal(action.payload.molNaOH);
-      const molKOH = new Decimal(action.payload.molKOH);
-      const molBaOH2 = new Decimal(action.payload.molBaOH2);
-      const molCaOH2 = new Decimal(action.payload.molCaOH2);
+      const molCO2 = new Decimal(action.payload.molCO2).dividedBy(22.4);
+      const VBazo = new Decimal(action.payload.VBazo);
+      const molNaOH = new Decimal(action.payload.molNaOH).times(VBazo);
+      const molKOH = new Decimal(action.payload.molKOH).times(VBazo);
+      const molBaOH2 = new Decimal(action.payload.molBaOH2).times(VBazo);
+      const molCaOH2 = new Decimal(action.payload.molCaOH2).times(VBazo);
       //const molOH = molNaOH + molKOH + molBaOH2 * 2 + molCaOH2 * 2;
       const molOH = molNaOH.plus(molKOH).plus(molBaOH2.times(2)).plus(molCaOH2.times(2));
       //const T = molOH / molCO2;

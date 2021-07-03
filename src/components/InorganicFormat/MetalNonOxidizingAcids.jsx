@@ -11,8 +11,8 @@ export default function MetalNonOxidizingAcids() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			metalMass: parseFloat(e.target.MetalMass.value),
-			h2Mol: parseFloat(e.target.H2Volume.value) / 22.4,
+			metalMass: e.target.MetalMass.value,
+			h2Mol: e.target.H2Volume.value,
 			axitType: e.target.Axit.value,
 		};
 		const action = calculate(1, input);

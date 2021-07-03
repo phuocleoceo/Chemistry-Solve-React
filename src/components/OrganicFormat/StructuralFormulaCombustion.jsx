@@ -11,11 +11,11 @@ export default function StructuralFormulaCombustion() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		const input = {
-			InorganicMass: parseFloat(e.target.InorganicMass.value),
-			MolMass: parseFloat(e.target.MolMass.value),
+			InorganicMass: e.target.InorganicMass.value,
+			MolMass: e.target.MolMass.value,
 			Case: parseInt(e.target.Case.value),
-			Variation: parseFloat(e.target.Variation.value),
-			Precipitate: parseFloat(e.target.Precipitate.value)
+			Variation: e.target.Variation.value,
+			Precipitate: e.target.Precipitate.value
 		};
 		console.log(input);
 		const action = calculate(8, input);
