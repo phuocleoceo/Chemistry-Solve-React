@@ -30,9 +30,15 @@ const format8Reducer = (state = initialState, action) => {
       //const factor = MolMass / (molC * 12 + molH * 1 + molO * 16);
       const factor = MolMass.dividedBy((molC.times(12)).plus(molH.times(1)).plus(molO.times(16)));
 
-      let result = "C" + molC.times(factor) + "H" + molH.times(factor);
-      if (molO.greaterThan(0)) result += "O" + molO.times(factor);
-      return result;
+      const C_factor = molC.times(factor);
+      const H_factor = molH.times(factor);
+      const O_factor = molO.times(factor);
+
+      const C_result = C_factor.equals(0) ? "" : (C_factor.equals(1) ? "C" : ("C" + C_factor));
+      const H_result = H_factor.equals(0) ? "" : (H_factor.equals(1) ? "H" : ("H" + H_factor));
+      const O_result = O_factor.equals(0) ? "" : (O_factor.equals(1) ? "O" : ("O" + O_factor));
+
+      return C_result + H_result + O_result;
     }
     case "RESET_STATE_8":
       return initialState;
